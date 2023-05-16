@@ -1,0 +1,457 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutDesc" xml:space="preserve">
+    <value>view information about Pictomaphone</value>
+  </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>About Page</value>
+  </data>
+  <data name="AdjustmentsMenuName" xml:space="preserve">
+    <value>Adjustments</value>
+  </data>
+  <data name="ApplyingChangesText" xml:space="preserve">
+    <value>Applying Changes...</value>
+  </data>
+  <data name="BlurDesc" xml:space="preserve">
+    <value>blurs the image</value>
+  </data>
+  <data name="BlurTitle" xml:space="preserve">
+    <value>Blur</value>
+  </data>
+  <data name="BoxBlurDesc" xml:space="preserve">
+    <value>performs a box blur on the image</value>
+  </data>
+  <data name="BoxBlurTitle" xml:space="preserve">
+    <value>Box Blur</value>
+  </data>
+  <data name="BrawnyDesc" xml:space="preserve">
+    <value>a vintage filter</value>
+  </data>
+  <data name="BrawnyTitle" xml:space="preserve">
+    <value>Brawny</value>
+  </data>
+  <data name="BrightnessContrastDesc" xml:space="preserve">
+    <value>adjust the brightness and contrast of the image</value>
+  </data>
+  <data name="BrightnessContrastTitle" xml:space="preserve">
+    <value>Brightness + Contrast</value>
+  </data>
+  <data name="CancelButtonText" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ChannelMixerDesc" xml:space="preserve">
+    <value>adjust the red, blue and green channels</value>
+  </data>
+  <data name="ChannelMixerTitle" xml:space="preserve">
+    <value>Channel Mixer</value>
+  </data>
+  <data name="ChannelOverlayDesc" xml:space="preserve">
+    <value>increases contrast using a channel from the image</value>
+  </data>
+  <data name="ChannelOverlayTitle" xml:space="preserve">
+    <value>Channel Overlay</value>
+  </data>
+  <data name="ColorBalanceDesc" xml:space="preserve">
+    <value>adjust the color balance of the image</value>
+  </data>
+  <data name="ColorBalanceTitle" xml:space="preserve">
+    <value>Color Balance</value>
+  </data>
+  <data name="ColorFilterDesc" xml:space="preserve">
+    <value>apply a colored filter to the image</value>
+  </data>
+  <data name="ColorFilterTitle" xml:space="preserve">
+    <value>Color Filter</value>
+  </data>
+  <data name="ColorizeDesc" xml:space="preserve">
+    <value>convert the image to have one tone</value>
+  </data>
+  <data name="ColorizeTitle" xml:space="preserve">
+    <value>Colorize</value>
+  </data>
+  <data name="CountryDesc" xml:space="preserve">
+    <value>a vintage filter</value>
+  </data>
+  <data name="CountryTitle" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="CropDesc" xml:space="preserve">
+    <value>crops the image to the selected size</value>
+  </data>
+  <data name="CropTitle" xml:space="preserve">
+    <value>Crop Image</value>
+  </data>
+  <data name="CrossProcessDesc" xml:space="preserve">
+    <value>creates a cross processed image</value>
+  </data>
+  <data name="CrossProcessTitle" xml:space="preserve">
+    <value>Cross Process</value>
+  </data>
+  <data name="DreamyGlowDesc" xml:space="preserve">
+    <value>adds a dreamy glow to the image</value>
+  </data>
+  <data name="DreamyGlowTitle" xml:space="preserve">
+    <value>Dreamy Glow</value>
+  </data>
+  <data name="EffectsMenuName" xml:space="preserve">
+    <value>Effects</value>
+  </data>
+  <data name="ErrorMessageTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="FileEditMenuName" xml:space="preserve">
+    <value>File + Edit</value>
+  </data>
+  <data name="FiltersMenuName" xml:space="preserve">
+    <value>Filters</value>
+  </data>
+  <data name="FrostedGlassDesc" xml:space="preserve">
+    <value>creates a frosted glass feel</value>
+  </data>
+  <data name="FrostedGlassTitle" xml:space="preserve">
+    <value>Frosted Glass</value>
+  </data>
+  <data name="GaussianBlurDesc" xml:space="preserve">
+    <value>blurs the image</value>
+  </data>
+  <data name="GaussianBlurTitle" xml:space="preserve">
+    <value>Gaussian Blur</value>
+  </data>
+  <data name="GrayscaleDesc" xml:space="preserve">
+    <value>convert the image to black and white</value>
+  </data>
+  <data name="GrayscaleTitle" xml:space="preserve">
+    <value>Grayscale</value>
+  </data>
+  <data name="HueSaturationDesc" xml:space="preserve">
+    <value>adjust the hue, saturation and lightness</value>
+  </data>
+  <data name="HueSaturationTitle" xml:space="preserve">
+    <value>Hue + Saturation</value>
+  </data>
+  <data name="ImageMenuName" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="LevelsDesc" xml:space="preserve">
+    <value>adjust the lows, mids and highs</value>
+  </data>
+  <data name="LevelsTitle" xml:space="preserve">
+    <value>Levels</value>
+  </data>
+  <data name="LomoDesc" xml:space="preserve">
+    <value>simulates vintage Lomo camera</value>
+  </data>
+  <data name="LomoTitle" xml:space="preserve">
+    <value>Lomo</value>
+  </data>
+  <data name="MissingExifMessage" xml:space="preserve">
+    <value>This image has no Exif Data</value>
+  </data>
+  <data name="MissingExifTitle" xml:space="preserve">
+    <value>Missing Exif</value>
+  </data>
+  <data name="NegativeDesc" xml:space="preserve">
+    <value>create a negative of the image</value>
+  </data>
+  <data name="NegativeTitle" xml:space="preserve">
+    <value>Negative</value>
+  </data>
+  <data name="NoImageOpenMessage" xml:space="preserve">
+    <value>I can't do effects when there isn't an image. Open something.</value>
+  </data>
+  <data name="NoImageOpenTitle" xml:space="preserve">
+    <value>Sheesh!</value>
+  </data>
+  <data name="OkButtonText" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="OldNewYorkDesc" xml:space="preserve">
+    <value>a vintage filter</value>
+  </data>
+  <data name="OldNewYorkTitle" xml:space="preserve">
+    <value>Old New York</value>
+  </data>
+  <data name="OpenButtonText" xml:space="preserve">
+    <value>Open</value>
+    <comment>open a photo</comment>
+  </data>
+  <data name="OpenPhotoDesc" xml:space="preserve">
+    <value>open a photo from the photo library</value>
+  </data>
+  <data name="OpenPhotoError" xml:space="preserve">
+    <value>The selected image could not be opened.</value>
+  </data>
+  <data name="OpenPhotoTitle" xml:space="preserve">
+    <value>Open a Photo</value>
+  </data>
+  <data name="PosterizeDesc" xml:space="preserve">
+    <value>reduces the bit-depth of the image</value>
+  </data>
+  <data name="PosterizeTitle" xml:space="preserve">
+    <value>Posterize</value>
+  </data>
+  <data name="PreviewButtonDesc" xml:space="preserve">
+    <value>view the photo full-screen with gesture support</value>
+  </data>
+  <data name="PreviewButtonTitle" xml:space="preserve">
+    <value>Preview the Photo</value>
+  </data>
+  <data name="ResizeDesc" xml:space="preserve">
+    <value>resizes the image</value>
+  </data>
+  <data name="ResizeTitle" xml:space="preserve">
+    <value>Resize Image</value>
+  </data>
+  <data name="RevertDesc" xml:space="preserve">
+    <value>revert to last save</value>
+  </data>
+  <data name="RevertMessageMessage" xml:space="preserve">
+    <value>You will lose any changes you've made.</value>
+  </data>
+  <data name="RevertMessageTitle" xml:space="preserve">
+    <value>Continue?</value>
+  </data>
+  <data name="RevertTitle" xml:space="preserve">
+    <value>Revert</value>
+  </data>
+  <data name="RotateFlipDesc" xml:space="preserve">
+    <value>rotate or flip the photo</value>
+  </data>
+  <data name="RotateFlipTitle" xml:space="preserve">
+    <value>Rotate / Flip</value>
+  </data>
+  <data name="SaveButtonText" xml:space="preserve">
+    <value>Save</value>
+    <comment>save a photo</comment>
+  </data>
+  <data name="SaveFileOverwriteMessage" xml:space="preserve">
+    <value>A file with that name already exists. Do you want to overwrite it?</value>
+  </data>
+  <data name="SaveFileOverwriteTitle" xml:space="preserve">
+    <value>Overwrite</value>
+  </data>
+  <data name="SavePhotoDesc" xml:space="preserve">
+    <value>save your photo to the photo library</value>
+  </data>
+  <data name="SavePhotoErrorMessage" xml:space="preserve">
+    <value>Uh oh, I had a problem saving the image:</value>
+  </data>
+  <data name="SavePhotoMessageText" xml:space="preserve">
+    <value>I take it you'd like to save this to the Saved Photos Library.</value>
+  </data>
+  <data name="SavePhotoMessageTitle" xml:space="preserve">
+    <value>Save?</value>
+  </data>
+  <data name="SavePhotoSuccessMessage" xml:space="preserve">
+    <value>I saved your image!</value>
+  </data>
+  <data name="SavePhotoSuccessTitle" xml:space="preserve">
+    <value>Huzzah!</value>
+  </data>
+  <data name="SavePhotoTitle" xml:space="preserve">
+    <value>Save your Photo</value>
+  </data>
+  <data name="SepiaDesc" xml:space="preserve">
+    <value>convert the image to sepia tone</value>
+  </data>
+  <data name="SepiaTitle" xml:space="preserve">
+    <value>Sepia</value>
+  </data>
+  <data name="SettingsDesc" xml:space="preserve">
+    <value>Change App Settings</value>
+  </data>
+  <data name="SettingsTitle" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="ShareButtonText" xml:space="preserve">
+    <value>Share</value>
+    <comment>share a photo</comment>
+  </data>
+  <data name="SolarizeDesc" xml:space="preserve">
+    <value>solarize the image</value>
+  </data>
+  <data name="SolarizeTitle" xml:space="preserve">
+    <value>Solarize</value>
+  </data>
+  <data name="SquareBorderDesc" xml:space="preserve">
+    <value>add a square border to the image</value>
+  </data>
+  <data name="SquareBorderTitle" xml:space="preserve">
+    <value>Square Border</value>
+  </data>
+  <data name="SummerForestDesc" xml:space="preserve">
+    <value>bright greens like summer in a deep forest</value>
+  </data>
+  <data name="SummerForestTitle" xml:space="preserve">
+    <value>Summer Forest</value>
+  </data>
+  <data name="SundayMorningDesc" xml:space="preserve">
+    <value>a vintage filter</value>
+  </data>
+  <data name="SundayMorningTitle" xml:space="preserve">
+    <value>Sunday Morning</value>
+  </data>
+  <data name="TakeButtonText" xml:space="preserve">
+    <value>Take</value>
+    <comment>take a photo</comment>
+  </data>
+  <data name="TakePhotoDesc" xml:space="preserve">
+    <value>take a photo using the camera app</value>
+  </data>
+  <data name="TakePhotoTitle" xml:space="preserve">
+    <value>Take a Photo</value>
+  </data>
+  <data name="TemperatureToneDesc" xml:space="preserve">
+    <value>adjust the temperature and tone</value>
+  </data>
+  <data name="TemperatureToneTitle" xml:space="preserve">
+    <value>Temperature + Tone</value>
+  </data>
+  <data name="TiltShiftDesc" xml:space="preserve">
+    <value>creates a tilt shift effect</value>
+  </data>
+  <data name="TiltShiftTitle" xml:space="preserve">
+    <value>Tilt Shift</value>
+  </data>
+  <data name="VelvianDesc" xml:space="preserve">
+    <value>simulates Velvia film</value>
+  </data>
+  <data name="VelvianTitle" xml:space="preserve">
+    <value>Velvian</value>
+  </data>
+  <data name="VibranceDesc" xml:space="preserve">
+    <value>adjust the vibrance of colors</value>
+  </data>
+  <data name="VibranceTitle" xml:space="preserve">
+    <value>Vibrance</value>
+  </data>
+  <data name="ViewExifDesc" xml:space="preserve">
+    <value>view the images exif data</value>
+  </data>
+  <data name="ViewExifTitle" xml:space="preserve">
+    <value>View Exif Data</value>
+  </data>
+  <data name="VignetteDesc" xml:space="preserve">
+    <value>adds a vignette to the image</value>
+  </data>
+  <data name="VignetteTitle" xml:space="preserve">
+    <value>Vignette</value>
+  </data>
+</root>

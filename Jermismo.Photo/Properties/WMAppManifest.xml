@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
+  <App xmlns="" ProductID="{f8a96e3f-9e59-4a96-ba2c-66c98bebe36f}" Title="Pictomaphone" RuntimeType="Silverlight" Version="1.6.0.0" Genre="apps.normal" Author="Jermismo" Description="Pictomaphone allows you to edit photos on your Windows Phone." Publisher="Jermismo.com" HubType="0">
+    <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
+    <Capabilities>
+      <Capability Name="ID_CAP_MEDIALIB" />
+      <Capability Name="ID_CAP_CAMERA" />
+      <Capability Name="ID_CAP_ISV_CAMERA"/>
+    </Capabilities>
+    <Tasks>
+      <DefaultTask Name="_default" NavigationPage="MainUI.xaml" />
+    </Tasks>
+    <Tokens>
+      <PrimaryToken TokenID="PictomaphoneToken" TaskName="_default">
+        <TemplateType5>
+          <BackgroundImageURI IsRelative="true" IsResource="false">Background.png</BackgroundImageURI>
+          <Count>0</Count>
+          <Title>Pictomaphone</Title>
+        </TemplateType5>
+      </PrimaryToken>
+    </Tokens>
+    <Extensions>
+      <Extension ExtensionName="Photos_Extra_Hub" ConsumerID="{5B04B775-356B-4AA0-AAF8-6491FFEA5632}" TaskID="_default" />
+      <Extension ExtensionName="Photos_Extra_Viewer" ConsumerID="{5B04B775-356B-4AA0-AAF8-6491FFEA5632}" TaskID="_default" />
+    </Extensions>
+  </App>
+</Deployment>

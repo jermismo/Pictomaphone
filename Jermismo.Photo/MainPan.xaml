@@ -1,0 +1,305 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Jermismo.Photo.MainPan"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:j="clr-namespace:Jermismo.Photo"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:effects="clr-namespace:Jermismo.Photo.EffectPages;assembly=Jermismo.Photo"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot contains the root grid where all other page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <controls:Panorama Title="Pictomaphone"
+            x:Name="mainPanorama"
+            Background="{StaticResource PhoneBackgroundBrush}">
+            
+            <!-- Change the default title size -->
+            <controls:Panorama.TitleTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" FontSize="64" Margin="0,54,0,0" />
+                </DataTemplate>
+            </controls:Panorama.TitleTemplate>
+            
+            <!-- Change the default header size -->
+            <controls:Panorama.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" FontSize="36" Margin="0,0,0,0" />
+                </DataTemplate>
+            </controls:Panorama.HeaderTemplate>
+            
+            <!--IMAGE-->
+            <controls:PanoramaItem Header="{Binding Path=LocalizedResources.ImageMenuName, Source={StaticResource LocalizedStrings}}" x:Name="ImagePanItem">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="100" />
+                    </Grid.RowDefinitions>
+                    
+                    <!-- image being edited -->
+                    <Image Name="mainImage" VerticalAlignment="Center" Stretch="Uniform" Grid.Row="0" />
+                    <j:EffectListItem x:Name="PreviewPhoto" Grid.Row="1"
+                                Click="ViewButton_Click"
+                                Title="{Binding Path=LocalizedResources.PreviewButtonTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.PreviewButtonDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/preview.png" />
+                </Grid>
+            </controls:PanoramaItem>
+            
+            <!--FILE/EDIT-->
+            <controls:PanoramaItem Header="{Binding Path=LocalizedResources.FileEditMenuName, Source={StaticResource LocalizedStrings}}" x:Name="FilePanItem">
+                <Grid>
+                    <ScrollViewer VerticalScrollBarVisibility="Visible">
+                        <StackPanel Margin="0">
+                            <!-- DEBUG ONLY -->
+                            <!--<j:EffectListItem x:Name="PerfTest"
+                                Click="PerfTest_Click"
+                                Title="PERF TEST"
+                                Description="...internal performance testing..."
+                                Icon="/Images/camera.png" />-->
+                            
+                            <j:EffectListItem x:Name="TakePhoto"
+                                Click="TakePhoto_Click"
+                                Title="{Binding Path=LocalizedResources.TakePhotoTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.TakePhotoDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/camera.png" />
+                            <j:EffectListItem x:Name="OpenPhoto"
+                                Click="OpenPhoto_Click"
+                                Title="{Binding Path=LocalizedResources.OpenPhotoTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.OpenPhotoDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/open.png" />
+                            <j:EffectListItem x:Name="SavePhoto"
+                                Click="SavePhoto_Click"
+                                Title="{Binding Path=LocalizedResources.SavePhotoTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.SavePhotoDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/save.png" />
+                            <j:EffectListItem x:Name="Crop"
+                                Click="Crop_Click"
+                                Title="{Binding Path=LocalizedResources.CropTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.CropDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/crop.png" />
+                            <j:EffectListItem x:Name="Resize"
+                                Click="Resize_Click"
+                                Title="{Binding Path=LocalizedResources.ResizeTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.ResizeDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/resize.png" />
+                            <j:EffectListItem x:Name="RotatePhoto"
+                                Click="RotatePhoto_Click"
+                                Title="{Binding Path=LocalizedResources.RotateFlipTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.RotateFlipDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/leftarrow.png"
+                                EffectName="RotateFlip"/>
+                            <j:EffectListItem x:Name="Revert"
+                                Click="Revert_Click"
+                                Title="{Binding Path=LocalizedResources.RevertTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.RevertDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/revert.png" />
+                            <j:EffectListItem x:Name="ViewExif"
+                                Click="ViewExif_Click"
+                                Title="{Binding Path=LocalizedResources.ViewExifTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.ViewExifDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/exif.png" />
+                            <j:EffectListItem x:Name="Settings"
+                                Click="Settings_Click"
+                                Title="{Binding Path=LocalizedResources.SettingsTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.SettingsDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/settings.png" />
+                            <j:EffectListItem x:Name="About"
+                                Click="About_Click"
+                                Title="{Binding Path=LocalizedResources.AboutTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.AboutDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/question.png" />
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </controls:PanoramaItem>
+
+            <!--ADJUSTMENTS-->
+            <controls:PanoramaItem Header="{Binding Path=LocalizedResources.AdjustmentsMenuName, Source={StaticResource LocalizedStrings}}">
+                <Grid>
+                    <ScrollViewer VerticalScrollBarVisibility="Visible">
+                        <StackPanel Margin="0,0,0,0">
+                            <j:EffectListItem x:Name="BrightnessContrast" Click="EffectListItem_Click"
+                                Title="{Binding Path=LocalizedResources.BrightnessContrastTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.BrightnessContrastDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/brightness.contrast.png"
+                                EffectName="BrightnessContrast"/>
+                            <j:EffectListItem x:Name="Levels" Click="EffectListItem_Click"
+                                Title="{Binding Path=LocalizedResources.LevelsTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.LevelsDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/levels.png"
+                                EffectName="Levels"/>
+                            <j:EffectListItem x:Name="ChannelOverlay" Click="EffectListItem_Click"
+                                Title="{Binding Path=LocalizedResources.ChannelOverlayTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.ChannelOverlayDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/grittycontrast.png"
+                                EffectName="ChannelOverlay"/>
+                            <j:EffectListItem x:Name="ChannelMixer" Click="EffectListItem_Click"
+                                Title="{Binding Path=LocalizedResources.ChannelMixerTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.ChannelMixerDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/channelmixer.png"
+                                EffectName="ChannelMixer"/>
+                            <j:EffectListItem x:Name="ColorBalance" Click="EffectListItem_Click"
+                                Title="{Binding Path=LocalizedResources.ColorBalanceTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.ColorBalanceDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/colorbalance.png"
+                                EffectName="ColorBalance"/>
+                            <j:EffectListItem x:Name="TempTone" Click="EffectListItem_Click"
+                                Title="{Binding Path=LocalizedResources.TemperatureToneTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.TemperatureToneDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/temperaturetone.png"
+                                EffectName="TemperatureTone"/>
+                            <j:EffectListItem x:Name="Vibrance" Click="EffectListItem_Click"
+                                Title="{Binding Path=LocalizedResources.VibranceTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.VibranceDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/vibrance.png"
+                                EffectName="Vibrance"/>
+                            <j:EffectListItem x:Name="HueSaturation" Click="EffectListItem_Click"
+                                Title="{Binding Path=LocalizedResources.HueSaturationTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.HueSaturationDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/huesaturation.png"
+                                EffectName="HueSaturation"/>
+                            <j:EffectListItem x:Name="Colorize" Click="EffectListItem_Click"
+                                Title="{Binding Path=LocalizedResources.ColorizeTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.ColorizeDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/colorize.png"
+                                EffectName="Colorize"/>
+                            <j:EffectListItem x:Name="Grayscale" Click="EffectListItem_Click"
+                                Title="{Binding Path=LocalizedResources.GrayscaleTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.GrayscaleDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/grayscale.png"
+                                EffectName="Grayscale"/>
+                            <j:EffectListItem x:Name="ColorFilter" Click="EffectListItem_Click"
+                                Title="{Binding Path=LocalizedResources.ColorFilterTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.ColorFilterDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/colorfilter.png"
+                                EffectName="ColorFilter"/>
+                            <j:EffectListItem x:Name="Negative" Click="EffectListItem_Click"
+                                Title="{Binding Path=LocalizedResources.NegativeTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.NegativeDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/negative.png"
+                                EffectName="Negative"/>
+                            <j:EffectListItem x:Name="Solarize" Click="EffectListItem_Click"
+                                Title="{Binding Path=LocalizedResources.SolarizeTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.SolarizeDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/solarize.png"
+                                EffectName="Solarize"/>
+                            <j:EffectListItem x:Name="Posterize" Click="EffectListItem_Click"
+                                Title="{Binding Path=LocalizedResources.PosterizeTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.PosterizeDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/posterize.png"
+                                EffectName="Posterize"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </controls:PanoramaItem>
+
+            <!--EFFECTS-->
+            <controls:PanoramaItem Header="{Binding Path=LocalizedResources.EffectsMenuName, Source={StaticResource LocalizedStrings}}">
+                <Grid>
+                    <ScrollViewer VerticalScrollBarVisibility="Visible">
+                        <StackPanel Margin="0,0,0,0">
+                            <j:EffectListItem x:Name="Blur" Click="EffectListItem_Click"
+                                Title="{Binding Path=LocalizedResources.BlurTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.BlurDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/blur.png"
+                                EffectName="Blur"/>
+                            <j:EffectListItem x:Name="TiltShift" Click="EffectListItem_Click"
+                                Title="{Binding Path=LocalizedResources.TiltShiftTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.TiltShiftDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/tiltshift.png"
+                                EffectName="TiltShift"/>
+                            <j:EffectListItem x:Name="DreamyGlow" Click="EffectListItem_Click"
+                                Title="{Binding Path=LocalizedResources.DreamyGlowTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.DreamyGlowDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/glow.png"
+                                EffectName="DreamyGlow"/>
+                            <j:EffectListItem x:Name="Vignette" Click="EffectListItem_Click"
+                                Title="{Binding Path=LocalizedResources.VignetteTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.VignetteDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/vignette.png"
+                                EffectName="Vignette"/>
+                            <j:EffectListItem x:Name="FrostedGlass" Click="EffectListItem_Click"
+                                Title="{Binding Path=LocalizedResources.FrostedGlassTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.FrostedGlassDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/frostedglass.png"
+                                EffectName="FrostedGlass"/>
+                            <j:EffectListItem x:Name="SquareBorder" Click="EffectListItem_Click"
+                                Title="{Binding Path=LocalizedResources.SquareBorderTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.SquareBorderDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/squareborder.png"
+                                EffectName="SquareBorder"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </controls:PanoramaItem>
+
+            <!--Filters-->
+            <controls:PanoramaItem Header="{Binding Path=LocalizedResources.FiltersMenuName, Source={StaticResource LocalizedStrings}}">
+                <Grid>
+                    <ScrollViewer VerticalScrollBarVisibility="Visible">
+                        <StackPanel Margin="0,0,0,0">
+                            <j:EffectListItem x:Name="Sepia" Click="EffectListItem_Click"
+                                Title="{Binding Path=LocalizedResources.SepiaTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.SepiaDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/sepia.png"
+                                EffectName="Sepia"/>
+                            <j:EffectListItem x:Name="CrossProcess" Click="EffectListItem_Click"
+                                Title="{Binding Path=LocalizedResources.CrossProcessTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.CrossProcessDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/crossprocess.png"
+                                EffectName="CrossProcess"/>
+                            <j:EffectListItem x:Name="Country" Click="EffectListItem_Click"
+                                Title="{Binding Path=LocalizedResources.CountryTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.CountryDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/country.png"
+                                EffectName="Country"/>
+                            <j:EffectListItem x:Name="Brawny" Click="EffectListItem_Click"
+                                Title="{Binding Path=LocalizedResources.BrawnyTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.BrawnyDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/brawny.png"
+                                EffectName="Brawny"/>
+                            <j:EffectListItem x:Name="SundayMorning" Click="EffectListItem_Click"
+                                Title="{Binding Path=LocalizedResources.SundayMorningTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.SundayMorningDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/sundaymorning.png"
+                                EffectName="SundayMorning"/>
+                            <j:EffectListItem x:Name="SummerForest" Click="EffectListItem_Click"
+                                Title="{Binding Path=LocalizedResources.SummerForestTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.SummerForestDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/summerforest.png"
+                                EffectName="SummerForest"/>
+                            <j:EffectListItem x:Name="OldNewYork" Click="EffectListItem_Click"
+                                Title="{Binding Path=LocalizedResources.OldNewYorkTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.OldNewYorkDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/oldnewyork.png"
+                                EffectName="OldNewYork"/>
+                            <j:EffectListItem x:Name="Lomo" Click="EffectListItem_Click"
+                                Title="{Binding Path=LocalizedResources.LomoTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.LomoDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/lomo.png"
+                                EffectName="Lomo"/>
+                            <j:EffectListItem x:Name="Velvian" Click="EffectListItem_Click"
+                                Title="{Binding Path=LocalizedResources.VelvianTitle, Source={StaticResource LocalizedStrings}}"
+                                Description="{Binding Path=LocalizedResources.VelvianDesc, Source={StaticResource LocalizedStrings}}"
+                                Icon="/Images/velvia.png"
+                                EffectName="Velvian"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </controls:PanoramaItem>
+
+        </controls:Panorama>
+    </Grid>
+
+    <!--Panorama-based applications should not show an ApplicationBar-->
+
+</phone:PhoneApplicationPage>

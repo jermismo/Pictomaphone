@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B58C7A66-D9BA-40DA-A2D6-BD5C0D0CC57B}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Jermismo.Photo</RootNamespace>
+    <AssemblyName>Jermismo.Photo</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>Pictomaphone.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Jermismo.Photo.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="Microsoft.Xna.Framework" />
+    <Reference Include="Microsoft.Xna.Framework.Input.Touch" />
+    <Reference Include="mscorlib.Extensions" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Interactivity, Version=3.7.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Serialization" />
+    <Reference Include="YourLastAboutDialog, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppSettings.cs" />
+    <Compile Include="Behaviours\PanZoomBehaviour.cs" />
+    <Compile Include="Behaviours\TranslateScaleBehavior.cs" />
+    <Compile Include="BrowsePhotosPage.xaml.cs">
+      <DependentUpon>BrowsePhotosPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BrowseGridItem.xaml.cs">
+      <DependentUpon>BrowseGridItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BrowseItem.cs" />
+    <Compile Include="Controls\BrowseListItem.xaml.cs">
+      <DependentUpon>BrowseListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CropSettings.xaml.cs">
+      <DependentUpon>CropSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EditingImage.xaml.cs">
+      <DependentUpon>EditingImage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EffectButton.xaml.cs">
+      <DependentUpon>EffectButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EffectControlPanel.xaml.cs">
+      <DependentUpon>EffectControlPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EffectSlider.xaml.cs">
+      <DependentUpon>EffectSlider.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\IconButton.xaml.cs">
+      <DependentUpon>IconButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ImageButton.xaml.cs">
+      <DependentUpon>ImageButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LineSelect.xaml.cs">
+      <DependentUpon>LineSelect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LittleProgress.xaml.cs">
+      <DependentUpon>LittleProgress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OkCancel.xaml.cs">
+      <DependentUpon>OkCancel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OnOffSetting.xaml.cs">
+      <DependentUpon>OnOffSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ProgressWithText.xaml.cs">
+      <DependentUpon>ProgressWithText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RectangleSelectControl.xaml.cs">
+      <DependentUpon>RectangleSelectControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ResizeControlPanel.xaml.cs">
+      <DependentUpon>ResizeControlPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RotateControlPanel.xaml.cs">
+      <DependentUpon>RotateControlPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ViewImageControl.xaml.cs">
+      <DependentUpon>ViewImageControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EffectPages\Crop.xaml.cs">
+      <DependentUpon>Crop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EffectListItem.xaml.cs">
+      <DependentUpon>EffectListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EffectPages\ExifInfo.xaml.cs">
+      <DependentUpon>ExifInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="External\MemoryDiagnosticsHelper.cs" />
+    <Compile Include="Helpers\Extensions.cs" />
+    <Compile Include="Helpers\MathHelper.cs" />
+    <Compile Include="EffectPages\ImageEffect.xaml.cs">
+      <DependentUpon>ImageEffect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizedStrings.cs" />
+    <Compile Include="MainPan.xaml.cs">
+      <DependentUpon>MainPan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainUI.xaml.cs">
+      <DependentUpon>MainUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PerfTest.xaml.cs">
+      <DependentUpon>PerfTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="EffectPages\Resize.xaml.cs">
+      <DependentUpon>Resize.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\AppResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="EffectPages\RotateFlip.xaml.cs">
+      <DependentUpon>RotateFlip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EffectPages\ViewPage.xaml.cs">
+      <DependentUpon>ViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EffectPages\SavePage.xaml.cs">
+      <DependentUpon>SavePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TrialInfo.xaml.cs">
+      <DependentUpon>TrialInfo.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="BrowsePhotosPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BrowseGridItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BrowseListItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CropSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\EditingImage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\EffectButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\EffectControlPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\EffectSlider.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\IconButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ImageButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\LineSelect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\LittleProgress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\OkCancel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\OnOffSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ProgressWithText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\RectangleSelectControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ResizeControlPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\RotateControlPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ViewImageControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EffectPages\Crop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EffectListItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EffectPages\ExifInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EffectPages\ImageEffect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PerfTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EffectPages\Resize.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EffectPages\RotateFlip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EffectPages\ViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EffectPages\SavePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TrialInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="YladLib\YourLastAboutDialog.dll" />
+    <None Include="YladLib\YourLastAboutDialog.pdb" />
+    <None Include="YladLib\YourLastAboutDialog.xml" />
+    <Content Include="Content\About\Data.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Icons\about.png" />
+    <Content Include="Icons\adjust.png" />
+    <Content Include="Icons\Adjust\balance.png" />
+    <Content Include="Icons\Adjust\brightness.png" />
+    <Content Include="Icons\Adjust\channelmixer.png" />
+    <Content Include="Icons\Adjust\colorfilter.png" />
+    <Content Include="Icons\Adjust\colorize.png" />
+    <Content Include="Icons\Adjust\grayscale.png" />
+    <Content Include="Icons\Adjust\huesat.png" />
+    <Content Include="Icons\Adjust\levels.png" />
+    <Content Include="Icons\Adjust\negative.png" />
+    <Content Include="Icons\Adjust\overlay.png" />
+    <Content Include="Icons\Adjust\posterize.png" />
+    <Content Include="Icons\Adjust\solarize.png" />
+    <Content Include="Icons\Adjust\temperature.png" />
+    <Content Include="Icons\Adjust\vibrance.png" />
+    <Content Include="Icons\appbar.folder.rest.png" />
+    <Content Include="Icons\appbar.feature.camera.rest.png" />
+    <Content Include="Icons\appbar.save.rest.png" />
+    <Content Include="Icons\appbar.check.rest.png" />
+    <Content Include="Icons\appbar.cancel.rest.png" />
+    <Content Include="Icons\appbar.share.rest.png" />
+    <Content Include="Icons\edit.png" />
+    <Content Include="Icons\Edit\flipHorizontal.png" />
+    <Content Include="Icons\Edit\flipVertical.png" />
+    <Content Include="Icons\Edit\rotateLeft.png" />
+    <Content Include="Icons\Edit\rotateRight.png" />
+    <Content Include="Icons\effects.png" />
+    <Content Include="Icons\Effects\blur.png" />
+    <Content Include="Icons\Effects\dreamyglow.png" />
+    <Content Include="Icons\Effects\frostedglass.png" />
+    <Content Include="Icons\Effects\squareborder.png" />
+    <Content Include="Icons\Effects\tiltshift.png" />
+    <Content Include="Icons\Effects\vignette.png" />
+    <Content Include="Icons\filter.png" />
+    <Content Include="Icons\Filters\brawny.png" />
+    <Content Include="Icons\Filters\country.png" />
+    <Content Include="Icons\Filters\crossprocess.png" />
+    <Content Include="Icons\Filters\lomo.png" />
+    <Content Include="Icons\Filters\oldnewyork.png" />
+    <Content Include="Icons\Filters\sepia.png" />
+    <Content Include="Icons\Filters\summerforest.png" />
+    <Content Include="Icons\Filters\sundaymorning.png" />
+    <Content Include="Icons\Filters\velvian.png" />
+    <Content Include="SplashScreenImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\PhoneToolkit-JeremyVersion\Microsoft.Phone.Controls.Toolkit\Microsoft.Phone.Controls.Toolkit.csproj">
+      <Project>{0754458A-7AFC-463A-B27D-2F6980522119}</Project>
+      <Name>Microsoft.Phone.Controls.Toolkit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExifPlus\ExifPlus.csproj">
+      <Project>{4F3635A2-A32A-4FEA-9170-C21E086CB482}</Project>
+      <Name>ExifPlus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Jermismo.Photo.Imaging\Jermismo.Photo.Imaging.csproj">
+      <Project>{EB19E78D-8B11-49C9-951E-43AD4D6558F1}</Project>
+      <Name>Jermismo.Photo.Imaging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\AppResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

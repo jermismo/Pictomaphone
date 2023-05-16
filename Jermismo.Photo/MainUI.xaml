@@ -1,0 +1,131 @@
+﻿<phone:PhoneApplicationPage 
+    xmlns:my1="clr-namespace:Jermismo.Photo.EffectPages"  
+    xmlns:my="clr-namespace:Jermismo.Photo.Controls"  
+    x:Class="Jermismo.Photo.MainUI"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource jpForeground}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="{StaticResource jpBackground}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="TopTools" Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center">
+            <my:IconButton x:Name="OpenButton" Source="/Icons/appbar.folder.rest.png" Text="{Binding Path=LocalizedResources.OpenButtonText, Source={StaticResource LocalizedStrings}}" Click="OpenButton_Click" Margin="12" />
+            <my:IconButton x:Name="TakeButton" Source="/Icons/appbar.feature.camera.rest.png" Text="{Binding Path=LocalizedResources.TakeButtonText, Source={StaticResource LocalizedStrings}}" Click="TakeButton_Click" Margin="12" />
+            <my:IconButton x:Name="SaveButton" Source="/Icons/appbar.save.rest.png" Text="{Binding Path=LocalizedResources.SaveButtonText, Source={StaticResource LocalizedStrings}}" Click="SaveButton_Click" Margin="12" />
+            <!--<my:IconButton x:Name="ShareButton" Source="/Icons/appbar.share.rest.png" Text="{Binding Path=LocalizedResources.ShareButtonText, Source={StaticResource LocalizedStrings}}" Click="ShareButton_Click" Margin="12" />-->
+            <my:IconButton x:Name="AboutButton" Source="/Icons/about.png" Text="About" Click="AboutButton_Click" Margin="12" />
+        </StackPanel>
+
+        <Grid x:Name="WorkArea" Grid.Row="1" Background="{StaticResource jpWorkArea}" Margin="0" SizeChanged="WorkArea_SizeChanged">
+            <Image x:Name="mainImage" />
+            <my1:ProgressWithText x:Name="progress" Text="Applying Changes..." Visibility="Collapsed" />
+            <my1:RectangleSelectControl x:Name="rectangleSelect" Visibility="Collapsed"  />
+            <my:LineSelect x:Name="lineSelect" Visibility="Collapsed" />
+        </Grid>
+        
+        <StackPanel Orientation="Vertical" Grid.Row="2">
+
+            <!-- Bottom Toolbar -->
+            <StackPanel x:Name="BottomTools" Orientation="Horizontal" HorizontalAlignment="Center">
+                <my:IconButton x:Name="EditButton" Source="/Icons/edit.png" Text="Edit" Margin="12" Click="EditButton_Click" />
+                <my:IconButton x:Name="AdjustButton" Source="/Icons/adjust.png" Text="Adjust" Margin="12" Click="AdjustButton_Click" />
+                <my:IconButton x:Name="EffectButton" Source="/Icons/effects.png" Text="Effects" Margin="12" Click="EffectButton_Click" />
+                <my:IconButton x:Name="FilterButton" Source="/Icons/filter.png" Text="Filters" Margin="12" Click="FilterButton_Click" />
+            </StackPanel>
+            
+            <!-- Edit -->
+            <ScrollViewer x:Name="EditTools" HorizontalScrollBarVisibility="Visible" Visibility="Collapsed">
+                <StackPanel Orientation="Horizontal">
+                    <my:EffectButton x:Name="Crop" Source="/Icons/edit.png" Text="Crop" Click="Edit_Click" />
+                    <my:EffectButton x:Name="Resize" Source="/Icons/edit.png" Text="Resize" Click="Edit_Click" />
+                    <my:EffectButton x:Name="Rotate" Source="/Icons/edit.png" Text="Rotate" Click="Edit_Click" />
+                    <my:EffectButton x:Name="Revert" Source="/Icons/edit.png" Text="Revert" Click="Edit_Click" />
+                </StackPanel>
+            </ScrollViewer>
+            
+            <!-- Adjustments -->
+            <ScrollViewer x:Name="AdjustTools" HorizontalScrollBarVisibility="Visible" Visibility="Collapsed">
+                <StackPanel Orientation="Horizontal">
+                    <my:EffectButton x:Name="Brightness" Source="/Icons/Adjust/brightness.png" Text="Brightness" Click="Adjustment_Click" />
+                    <my:EffectButton x:Name="Levels" Source="/Icons/Adjust/levels.png" Text="Levels" Click="Adjustment_Click" />
+                    <my:EffectButton x:Name="Overlay" Source="/Icons/Adjust/overlay.png" Text="Overlay" Click="Adjustment_Click" />
+                    <my:EffectButton x:Name="Mixer" Source="/Icons/Adjust/channelmixer.png" Text="Mixer" Click="Adjustment_Click" />
+                    <my:EffectButton x:Name="Balance" Source="/Icons/Adjust/balance.png" Text="Balance" Click="Adjustment_Click" />
+                    <my:EffectButton x:Name="Temperature" Source="/Icons/Adjust/temperature.png" Text="Temperature" Click="Adjustment_Click" />
+                    <my:EffectButton x:Name="Vibrance" Source="/Icons/Adjust/vibrance.png" Text="Vibrance" Click="Adjustment_Click" />
+                    <my:EffectButton x:Name="HueSat" Source="/Icons/Adjust/huesat.png" Text="Hue+Saturation" Click="Adjustment_Click" />
+                    <my:EffectButton x:Name="Colorize" Source="/Icons/Adjust/colorize.png" Text="Colorize" Click="Adjustment_Click" />
+                    <my:EffectButton x:Name="ColorFilter" Source="/Icons/Adjust/colorfilter.png" Text="Color Filter" Click="Adjustment_Click" />
+                    <my:EffectButton x:Name="Grayscale" Source="/Icons/Adjust/grayscale.png" Text="Grayscale" Click="Adjustment_Click" />
+                    <my:EffectButton x:Name="Negative" Source="/Icons/Adjust/negative.png" Text="Negative" Click="Adjustment_Click" />
+                    <my:EffectButton x:Name="Solarize" Source="/Icons/Adjust/solarize.png" Text="Solarize" Click="Adjustment_Click" />
+                    <my:EffectButton x:Name="Posterize" Source="/Icons/Adjust/posterize.png" Text="Posterize" Click="Adjustment_Click" />
+                </StackPanel>
+            </ScrollViewer>
+
+            <ScrollViewer x:Name="EffectTools" HorizontalScrollBarVisibility="Visible" Visibility="Collapsed">
+                <StackPanel Orientation="Horizontal">
+                    <my:EffectButton x:Name="Blur" Source="/Icons/Effects/blur.png" Text="Blur" Click="Effect_Click" />
+                    <my:EffectButton x:Name="TiltShift" Source="/Icons/Effects/tiltshift.png" Text="Tilt Shift" Click="Effect_Click" />
+                    <my:EffectButton x:Name="DreamyGlow" Source="/Icons/Effects/dreamyglow.png" Text="Dreamy Glow" Click="Effect_Click" />
+                    <my:EffectButton x:Name="Vignette" Source="/Icons/Effects/vignette.png" Text="Vignette" Click="Effect_Click" />
+                    <my:EffectButton x:Name="FrostedGlass" Source="/Icons/Effects/frostedglass.png" Text="Frosted Glass" Click="Effect_Click" />
+                    <my:EffectButton x:Name="SquareBorder" Source="/Icons/Effects/squareborder.png" Text="Square Border" Click="Effect_Click" />
+                </StackPanel>
+            </ScrollViewer>
+
+            <ScrollViewer x:Name="FilterTools" HorizontalScrollBarVisibility="Visible" Visibility="Collapsed">
+                <StackPanel Orientation="Horizontal">
+                    <my:EffectButton x:Name="Brawny" Source="/Icons/Filters/brawny.png" Text="Brawny" Click="Filter_Click" />
+                    <my:EffectButton x:Name="Country" Source="/Icons/Filters/country.png" Text="Country" Click="Filter_Click" />
+                    <my:EffectButton x:Name="CrossProcess" Source="/Icons/Filters/crossprocess.png" Text="Cross Process" Click="Filter_Click" />
+                    <my:EffectButton x:Name="Lomo" Source="/Icons/Filters/lomo.png" Text="Lomo" Click="Filter_Click" />
+                    <my:EffectButton x:Name="OldNewYork" Source="/Icons/Filters/oldnewyork.png" Text="Old New York" Click="Filter_Click" />
+                    <my:EffectButton x:Name="Sepia" Source="/Icons/Filters/sepia.png" Text="Sepia" Click="Filter_Click" />
+                    <my:EffectButton x:Name="SummerForest" Source="/Icons/Filters/summerforest.png" Text="Summer Forest" Click="Filter_Click" />
+                    <my:EffectButton x:Name="SundayMorning" Source="/Icons/Filters/sundaymorning.png" Text="Sunday Morning" Click="Filter_Click" />
+                    <my:EffectButton x:Name="Velvian" Source="/Icons/Filters/velvian.png" Text="Velvian" Click="Filter_Click" />
+                </StackPanel>
+            </ScrollViewer>
+
+            <!-- Effect Control Panel -->
+            <StackPanel x:Name="effectStack" Orientation="Vertical" Visibility="Collapsed">
+                <my1:EffectControlPanel x:Name="effectPanel" ValueChanged="effectPanel_ValueChanged" />
+                <my:OkCancel x:Name="EffectOkCancel" Okay="EffectOkButton_Click" Cancel="EffectCancelButton_Click" />
+            </StackPanel>
+            <!-- Crop Control Panel -->
+            <StackPanel x:Name="cropStack" Orientation="Vertical" Visibility="Collapsed">
+                <my:CropSettings x:Name="cropPanel" ValueChanged="cropPanel_ValueChanged" />
+                <my:OkCancel x:Name="CropOkCancel" Okay="CropOkCancel_Okay" Cancel="CropOkCancel_Cancel" />
+            </StackPanel>
+            <!-- Resize Control Panel -->
+            <StackPanel x:Name="resizeStack" Orientation="Vertical" Visibility="Collapsed">
+                <my:ResizeControlPanel x:Name="resizePanel" Resize="resizePanel_Resize"  />
+                <my:OkCancel x:Name="ResizeOkCancel" Okay="ResizeOkCancel_Okay" Cancel="ResizeOkCancel_Cancel"></my:OkCancel>
+            </StackPanel>
+            <!-- Rotate Control Panel -->
+            <StackPanel x:Name="rotateStack" Orientation="Vertical" Visibility="Collapsed">
+                <my:RotateControlPanel x:Name="rotatePanel" Rotate="rotatePanel_Rotate" />
+                <my:OkCancel x:Name="RotateOkCancel" Okay="RotateOkCancel_Okay" Cancel="RotateOkCancel_Cancel"></my:OkCancel>
+            </StackPanel>
+            
+        </StackPanel>
+
+    </Grid>
+ 
+</phone:PhoneApplicationPage>
