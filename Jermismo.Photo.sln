@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jermismo.Photo", "Jermismo.Photo\Jermismo.Photo.csproj", "{B58C7A66-D9BA-40DA-A2D6-BD5C0D0CC57B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Phone.Controls.Toolkit", "..\PhoneToolkit-JeremyVersion\Microsoft.Phone.Controls.Toolkit\Microsoft.Phone.Controls.Toolkit.csproj", "{0754458A-7AFC-463A-B27D-2F6980522119}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jermismo.Photo.Imaging", "Jermismo.Photo.Imaging\Jermismo.Photo.Imaging.csproj", "{EB19E78D-8B11-49C9-951E-43AD4D6558F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExifPlus", "ExifPlus\ExifPlus.csproj", "{4F3635A2-A32A-4FEA-9170-C21E086CB482}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B58C7A66-D9BA-40DA-A2D6-BD5C0D0CC57B}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{B58C7A66-D9BA-40DA-A2D6-BD5C0D0CC57B}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{B58C7A66-D9BA-40DA-A2D6-BD5C0D0CC57B}.Debug|Any CPU.Deploy.0 = Release|Any CPU
+		{B58C7A66-D9BA-40DA-A2D6-BD5C0D0CC57B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B58C7A66-D9BA-40DA-A2D6-BD5C0D0CC57B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B58C7A66-D9BA-40DA-A2D6-BD5C0D0CC57B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{0754458A-7AFC-463A-B27D-2F6980522119}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{0754458A-7AFC-463A-B27D-2F6980522119}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{0754458A-7AFC-463A-B27D-2F6980522119}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0754458A-7AFC-463A-B27D-2F6980522119}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB19E78D-8B11-49C9-951E-43AD4D6558F1}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{EB19E78D-8B11-49C9-951E-43AD4D6558F1}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{EB19E78D-8B11-49C9-951E-43AD4D6558F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB19E78D-8B11-49C9-951E-43AD4D6558F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F3635A2-A32A-4FEA-9170-C21E086CB482}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F3635A2-A32A-4FEA-9170-C21E086CB482}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F3635A2-A32A-4FEA-9170-C21E086CB482}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F3635A2-A32A-4FEA-9170-C21E086CB482}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

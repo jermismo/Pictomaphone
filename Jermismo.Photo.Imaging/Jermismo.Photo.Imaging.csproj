@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EB19E78D-8B11-49C9-951E-43AD4D6558F1}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Jermismo.Photo.Imaging</RootNamespace>
+    <AssemblyName>Jermismo.Photo.Imaging</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Xna.Framework" />
+    <Reference Include="mscorlib.Extensions" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adjustments\ChannelMixer.cs" />
+    <Compile Include="Adjustments\ChannelOverlay.cs" />
+    <Compile Include="Adjustments\ColorBalance.cs" />
+    <Compile Include="Adjustments\ColorFilter.cs" />
+    <Compile Include="Adjustments\Colorize.cs" />
+    <Compile Include="Adjustments\Curves.cs" />
+    <Compile Include="Adjustments\Grayscale.cs" />
+    <Compile Include="Adjustments\HueSaturation.cs" />
+    <Compile Include="Adjustments\Levels.cs" />
+    <Compile Include="Adjustments\Negative.cs" />
+    <Compile Include="Adjustments\Posterize.cs" />
+    <Compile Include="Adjustments\Sepia.cs" />
+    <Compile Include="Adjustments\Solarize.cs" />
+    <Compile Include="Adjustments\TemperatureTone.cs" />
+    <Compile Include="Adjustments\Vibrance.cs" />
+    <Compile Include="Argb.cs" />
+    <Compile Include="Borders\SquareBorder.cs" />
+    <Compile Include="ColorB.cs" />
+    <Compile Include="ColorI.cs" />
+    <Compile Include="CieLab.cs" />
+    <Compile Include="EffectBase.cs" />
+    <Compile Include="Adjustments\BrightnessContrast.cs" />
+    <Compile Include="EffectImage.cs" />
+    <Compile Include="EffectParam.cs" />
+    <Compile Include="Effects.cs" />
+    <Compile Include="Effects\StackBlur.cs" />
+    <Compile Include="Effects\BoxBlur.cs" />
+    <Compile Include="Effects\DreamyGlow.cs" />
+    <Compile Include="Effects\FrostedGlass.cs" />
+    <Compile Include="Effects\GaussianBlur.cs" />
+    <Compile Include="Effects\GaussianBlurOld.cs" />
+    <Compile Include="Effects\RedEyeFix.cs" />
+    <Compile Include="Effects\TiltShift.cs" />
+    <Compile Include="Effects\Vignette.cs" />
+    <Compile Include="Extensions\ColorBEx.cs" />
+    <Compile Include="Extensions\MathHelper.cs" />
+    <Compile Include="Extensions\Numbers.cs" />
+    <Compile Include="Extensions\WritableBitmapExtensions.cs" />
+    <Compile Include="Filters\Brawny.cs" />
+    <Compile Include="Filters\Lomo.cs" />
+    <Compile Include="Filters\SummerForest.cs" />
+    <Compile Include="Filters\Country.cs" />
+    <Compile Include="Filters\CrossProcess.cs" />
+    <Compile Include="Filters\OldNewYork.cs" />
+    <Compile Include="Filters\SundayMorning.cs" />
+    <Compile Include="Filters\Velvian.cs" />
+    <Compile Include="Hsl.cs" />
+    <Compile Include="IPixel.cs" />
+    <Compile Include="LabTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Spline.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
